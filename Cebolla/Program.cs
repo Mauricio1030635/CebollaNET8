@@ -4,6 +4,7 @@ using Cebolla.Application.Interfaces;
 using Cebolla.Application.MappingProfiles;
 using Cebolla.Application.Services;
 using Cebolla.Domain.Interfaces;
+using Cebolla.Infrastructure.EF;
 using Cebolla.Infrastructure.EF.Context;
 using Cebolla.Infrastructure.EF.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(PersonaProfile));
-//builder.Services.AddAutoMapper(typeof(PersonaProfile));
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
 // Registrar servicios de aplicación
