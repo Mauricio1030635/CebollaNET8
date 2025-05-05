@@ -1,0 +1,6 @@
+@Cebolla_HostAddress = http://localhost:5009
+
+GET {{Cebolla_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
